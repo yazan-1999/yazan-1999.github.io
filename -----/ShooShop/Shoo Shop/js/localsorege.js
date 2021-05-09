@@ -27,6 +27,8 @@ class Localsorege {
         if (index === -1) {
             products.push(anything);
             pushProduct = true;
+            // for (let elem of elements) {
+            // elem.querySelector("i").classList.toggle("mystyle")}
 
         } else {
             products.splice(index, 1);
@@ -52,9 +54,10 @@ let elements = document.querySelectorAll('#row button')
 // let price = elements.closest("div[.text-cente]")
 // console.log(elements[0].innerHTML)
 
-let clicker = ""
+let clicker 
 for (let elem of elements) {
     elem.addEventListener("click", function () {
+
         clicker = elem
         elem.querySelector("i").classList.toggle("mystyle")
         let price = elem.closest("div")
@@ -63,10 +66,11 @@ for (let elem of elements) {
         let name
         name = pric.querySelector(".card-body h4 a")
         pric = pric.querySelector(".card-body h4+p")
+        // name.classList.add("mystyle")
         console.log(name.innerHTML)
         // console.log(pric.innerHTML)
         const regex = / MDL/i;
-        let remov = pric.innerHTML.replace(regex,"")
+        let remov = pric.innerHTML.replace(regex, "")
         // console.log(pric.innerHTML)
         console.log(remov)
 
@@ -75,34 +79,39 @@ for (let elem of elements) {
         let productsStore = localsore.getProducts()
         let hauMach = productsStore.length
         // let hauMa = Object.keys(productsStore["products"]).length
+        var hadClass = clicker;
+
+        // after фильтр обновляется
+        if (hadClass)
+        clicker.classList.add('mystyle');
 
 
 
 
-        localsore.putProducts(final)
-        console.log(final)
-        // let uan = 1
-        // while (uan == 1){
-        //     uan ++
-        //     document.querySelector(".nav-shop__circle").innerHTML = 1
+    localsore.putProducts(final)
+    console.log(final)
+    // let uan = 1
+    // while (uan == 1){
+    //     uan ++
+    //     document.querySelector(".nav-shop__circle").innerHTML = 1
 
-        // }
-        let val = localStorage.getItem("products")
-        let row = JSON.parse(val)
-        let len = row
-        for (let el of row) {
-            let sameName = el.Name
-            let om = typeof new String(el)
-            console.log(om)
-            console.log(el)
-        }
-        console.log(row)
+    // }
+    let val = localStorage.getItem("products")
+    let row = JSON.parse(val)
+    let len = row
+    for (let el of row) {
+        let sameName = el.Name
+        let om = typeof new String(el)
+        console.log(om)
+        console.log(el)
+    }
+    console.log(row)
 
 
-        document.querySelector(".nav-shop__circle").innerHTML = row.length
+    document.querySelector(".nav-shop__circle").innerHTML = row.length
 
-        // console.log(productsStore.length)
-    })
+    // console.log(productsStore.length)
+})
     //  elem.addEventListener("click", function(){
     //     for (let elem of price) {
     //         console.log(elem)
