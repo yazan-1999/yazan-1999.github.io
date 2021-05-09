@@ -27,22 +27,26 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
                             <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                         
+
                             <li class="nav-item"><a class="nav-link" href="category.html">Shop</a></li>
                             <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Pages</a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
                                     <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="tracking-order.html">Tracking</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="tracking-order.html">Tracking</a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -50,8 +54,11 @@
 
                         <ul class="nav-shop">
                             <!-- <li class="nav-item"><button><i class="ti-search"></i></button></li> -->
-                            <li class="nav-item"><button><a href="cart.html"><i class="ti-shopping-cart"></i><span class="nav-shop__circle"></span></a></button> </li>
-                            <li class="nav-item"> <a class="button button-header" href="tel:+373 7 6002 392">Call</a></li>                        </ul>
+                            <li class="nav-item"><button><a href="cart.html"><i class="ti-shopping-cart"></i><span
+                                            class="nav-shop__circle"></span></a></button> </li>
+                            <li class="nav-item"> <a class="button button-header" href="tel:+373 7 6002 392">Call</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </nav>
@@ -81,88 +88,64 @@
     <!--================Checkout Area =================-->
     <section class="checkout_area section-margin--small">
         <div class="container">
-            <div class="returning_customer">
-                <div class="check_title">
-                    <h2>Returning Customer? <a href="#">Click here to login</a></h2>
-                </div>
-                <p>If you have shopped with us before, please enter your details in the boxes below. If you are a new customer, please proceed to the Billing & Shipping section.</p>
-                <form class="row contact_form" action="#" method="post" novalidate="novalidate">
-                    <div class="col-md-6 form-group p_star">
-                        <input type="text" class="form-control" placeholder="Username or Email*" onfocus="this.placeholder=''" onblur="this.placeholder = 'Username or Email*'" id="name" name="name">
-                        <!-- <span class="placeholder" data-placeholder="Username or Email"></span> -->
-                    </div>
-                    <div class="col-md-6 form-group p_star">
-                        <input type="password" class="form-control" placeholder="Password*" onfocus="this.placeholder=''" onblur="this.placeholder = 'Password*'" id="password" name="password">
-                        <!-- <span class="placeholder" data-placeholder="Password"></span> -->
-                    </div>
-                    <div class="col-md-12 form-group">
-                        <button type="submit" value="submit" class="button button-login">login</button>
-                        <div class="creat_account">
-                            <input type="checkbox" id="f-option" name="selector">
-                            <label for="f-option">Remember me</label>
-                        </div>
-                        <a class="lost_pass" href="#">Lost your password?</a>
-                    </div>
-                </form>
-            </div>
-            <div class="cupon_area">
-                <div class="check_title">
-                    <h2>Have a coupon? <a href="#">Click here to enter your code</a></h2>
-                </div>
-                <input type="text" placeholder="Enter coupon code">
-                <a class="button button-coupon" href="#">Apply Coupon</a>
-            </div>
+
             <div class="billing_details">
                 <div class="row">
                     <div class="col-lg-8">
                         <h3>Billing Details</h3>
-                        <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                        <form class="row contact_form" action="mailto:roma.gerasimchuk.1997@mail.ru" method="post"
+                            novalidate="novalidate" enctype="text/plain">
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="first" name="name">
+                                <input type="text" class="form-control" id="first" name="name" placeholder="First name">
                                 <span class="placeholder" data-placeholder="First name"></span>
                             </div>
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="last" name="name">
+                                <input type="text" class="form-control" id="last" name="name" placeholder="Last name">
                                 <span class="placeholder" data-placeholder="Last name"></span>
                             </div>
                             <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="company" name="company" placeholder="Company name">
+                                <input type="text" class="form-control" id="company" name="company"
+                                    placeholder="Company name">
                             </div>
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="number" name="number">
+                                <input type="text" class="form-control" id="number" name="number"
+                                    placeholder="Phone number">
                                 <span class="placeholder" data-placeholder="Phone number"></span>
                             </div>
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="email" name="compemailany">
+                                <input type="text" class="form-control" id="email" name="compemailany"
+                                    placeholder="Email Address">
                                 <span class="placeholder" data-placeholder="Email Address"></span>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <select class="country_select">
-                                <option value="1">Country</option>
-                                <option value="2">Country</option>
-                                <option value="4">Country</option>
-                            </select>
+                                    <option value="1">Moldova</option>
+                                    <option value="2">China</option>
+                                    <option value="4">Other</option>
+                                </select>
                             </div>
                             <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="add1" name="add1">
+                                <input type="text" class="form-control" id="add1" name="add1"
+                                    placeholder="Recipient Address line">
                                 <span class="placeholder" data-placeholder="Address line 01"></span>
                             </div>
                             <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="add2" name="add2">
+                                <input type="text" class="form-control" id="add2" name="add2"
+                                    placeholder="Full address">
                                 <span class="placeholder" data-placeholder="Address line 02"></span>
                             </div>
                             <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="city" name="city">
+                                <input type="text" class="form-control" id="city" name="city" placeholder="Town/City">
                                 <span class="placeholder" data-placeholder="Town/City"></span>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <select class="country_select">
-                                <option value="1">District</option>
-                                <option value="2">District</option>
-                                <option value="4">District</option>
-                            </select>
+                                    <option value="1">Check Payments</option>
+                                    <option value="2">Paypal</option>
+                                    <option value="3">Other Payments</option>
+                                </select>
                             </div>
-                            <div class="col-md-12 form-group">
+                            <!-- <div class="col-md-12 form-group">
                                 <input type="text" class="form-control" id="zip" name="zip" placeholder="Postcode/ZIP">
                             </div>
                             <div class="col-md-12 form-group">
@@ -176,12 +159,17 @@
                                     <h3>Shipping Details</h3>
                                     <input type="checkbox" id="f-option3" name="selector">
                                     <label for="f-option3">Ship to a different address?</label>
-                                </div>
-                                <textarea class="form-control" name="message" id="message" rows="1" placeholder="Order Notes"></textarea>
+                                </div>-->
+                            <div class="col-md-12 form-group p_star">
+                                <textarea style="width: 7px;height: 8px;" id="textarea" name="Product Name">valiuses
+
+                                    </textarea>
                             </div>
+                            <!-- </div> -->
+                            <input class="button button-paypal" type="submit" value="Сheckout">
                         </form>
                     </div>
-                    <div class="col-lg-4">
+                    <!-- <div class="col-lg-4">
                         <div class="order_box">
                             <h2>Your Order</h2>
                             <ul class="list">
@@ -226,7 +214,7 @@
                                 <a class="button button-paypal" href="#">Proceed to Paypal</a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -244,10 +232,12 @@
                         <div class="single-footer-widget tp_widgets ">
                             <h4 class="footer_title large_title">Our Mission</h4>
                             <p>
-                                So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved us lan Gathering thing us land years living.
+                                So seed seed green that winged cattle in. Gathering thing made fly you're no divided
+                                deep moved us lan Gathering thing us land years living.
                             </p>
                             <p>
-                                So seed seed green that winged cattle in. Gathering thing made fly you're no divided deep moved
+                                So seed seed green that winged cattle in. Gathering thing made fly you're no divided
+                                deep moved
                             </p>
                         </div>
                     </div>
@@ -314,7 +304,8 @@
                         Copyright &copy;
                         <script>
                             document.write(new Date().getFullYear());
-                        </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        </script> All rights reserved | This template is made with <i class="fa fa-heart"
+                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>
@@ -334,6 +325,48 @@
     <script src="vendors/mail-script.js"></script>
     <script src="js/main.js"></script>
     <script src="js/Shopping.js"></script>
+    <script>
+        // for (let el of row) {
+        //     let sameName = el.Name
+        //     let om = new String(el)
+        //     // console.log(om)
+        //     let SomeProduct = JSON.parse(el)
+        //     console.log(SomeProduct.Name, SomeProduct.Price)
+        //     let tbody = document.querySelector(`#tbody`)
+        //     console.log(tbody);
+        //             let tbody = document.querySelector(`#tbody`) .innerHTML = `<div><p>${SomeProduct.Name}</p></div><h5>${SomeProduct.Price} MDL</h5>`
+        //             $(function () {
+
+        // // let nom=1;
+
+
+        //  r++;
+        //  console.log(nom)
+
+        // $(`tbody`).prepend(`<div><p>${SomeProduct.Name}</p></div><h5>${SomeProduct.Price} MDL</h5>`);
+
+
+        // });}
+        // let val = localStorage.getItem("products")
+        //     let row = JSON.parse(val)
+        //     let len = row
+        //     for (let el of row) {
+        //         let sameName = el.Name
+        //         let om = typeof new String(el)
+        //         console.log(om)
+        //         console.log(el)
+        //     }
+        for (let el of row) {
+            let sameName = el.Name
+            let om = new String(el)
+            // console.log(om)
+            let SomeProduct = JSON.parse(el)
+            console.log(SomeProduct.Name, SomeProduct.Price)
+            // console.log(el[i])
+            document.getElementById("textarea").innerHTML=JSON.stringify(SomeProduct.Name);
+        }
+
+    </script>
 
 </body>
 
