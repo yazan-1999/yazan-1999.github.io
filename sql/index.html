@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+</head>
+
+<body>
+<style>
+h1{
+color: rgb(26, 167, 85);
+}
+h2 {
+color: rgb(19, 40, 160)
+}
+h3{
+color: rgb(207, 20, 20)
+}
+
+p {
+color: rgb(255, 255, 255);
+}
+
+hr {
+border: rgb(92, 53, 114) solid 5px;
+}
+
+body {
+text-align: center;
+background-color: black;
+}
+div{
+text-align: left;
+
+}
+</style>
+<h1>начало</h1>
+<hr>
+<h2>создание базы данных</h2>
+<p>CREATE DATABASE testing </p>
+
+<h2>удалиние базы данных </h2>
+<p>DROP DATABASE testing</p>
+<br>
+<hr>
+<h1>заходим в саму базу банных</h1>
+<hr>
+<h2>создание таблички в базе данных только с id</h2>
+<p>CREATE TABLE users(
+id INT
+);</p>
+
+<h2>удалиние таблички в базе данных</h2>
+<p>DROP TABLE users;</p>
+
+<h2>создание таблицы с полной информацией </h2>
+<p>CREATE TABLE people(
+id INT NOT NULL AUTO_INCREMENT,
+name VARCHAR(30),
+email VARCHAR(40),
+bio TEXT,
+berth DATE,
+PRIMARY KEY(id)
+);</p>
+<br>
+
+<hr>
+<h1>заходим в саму таблицу</h1>
+<hr>
+
+<h2>добавить новое поле в таблицу </h2>
+<p>ALTER TABLE people ADD pass VARCHAR(32);</p>
+
+<h2>устанавливаем что berth не может быть нулем</h2>
+<p>ALTER TABLE people CHANGE berth berth DATE NOT NULL;</p>
+
+<h2>удалить поле из таблицы</h2>
+<p>ALTER TABLE people DROP COLUMN pass;</p>
+<hr>
+<h1>работа с кантентом поля таблицы</h1>
+<hr>
+<h2>заполняем поля в таблице</h2>
+<p>INSERT INTO people (name, bio, berth, email) VALUES('Alecsei','просто программист','2050-04-04','test@mail.ru')
+</p>
+<h2>заполняем сразу несколько строк</h2>
+<p>INSERT INTO people (name,email,bio, berth)
+VALUES
+('Bob','test@test.com','coding','2050-05-22'),
+('John','test1@test.com','coding2','2050-05-22'),
+('Alex','test2@test.com','coding3','2050-05-22');</p>
+<hr>
+<h1>обновелние данныйх</h1>
+<hr>
+<h3 style="color: rgb(159, 43, 226);"> обновляем в разделе name его значения в id 5</h3>
+<h3 style="color: rgb(100, 50, 50);;"> обнови таблицу people вставь в раздел name значение максим в котором id равен
+5
+</h3>
+<p>UPDATE people SET `name` = 'максим' WHERE id = 5</p>
+<br>
+<br>
+<h3 style="color: rgb(15, 29, 107);"> обновляем в разделе name и email его значение находит в name максим</h3>
+<h3 style="color: rgb(107, 10, 10);"> обнови таблицу people вставь в раздел name значение Иван и в раздел email
+ivan@mail.ru в котором name максим </h3>
+<p>UPDATE `people` SET `name` = 'Иван' , `email` = 'ivan@mail.ru' WHERE `name` = 'максим'</p>
+<br>
+<br>
+<h3 style="color: rgb(15, 29, 107);"> обновляем в разделе name и email его значение на Иван и ivan@mail.ru находит
+все где id больше 4</h3>
+<h3 style="color: rgb(107, 10, 10);"> обнови таблицу people вставь в раздел name значение Иван и в раздел email
+ivan@mail.ru все где id больше 4</h3>
+<p>UPDATE `people` SET `name` = 'Иван' , `email` = 'ivan@mail.ru' WHERE `id` > 4 </p>
+<br>
+<br>
+<h3 style="color: rgb(15, 29, 107);"> обновляем в разделе bio его значение на 'просто новый текст' находит все где
+name Иван и id равен 5</h3>
+<h3 style="color: rgb(107, 10, 10);"> обнови таблицу people вставь в раздел name значение Иван и в раздел email
+ivan@mail.ru все где name Иван и id равен 5</h3>
+<p>UPDATE `people` SET `bio` = 'просто новый текст' WHERE `name`= 'Иван' AND `id` = 5</p>
+
+<hr>
+<h1>удаление данных</h1>
+<hr>
+<h3>удалить только строчку с id 2</h3>
+<p>DELETE FROM test WHERE id = 2;</p>
+<h3>удалить все данные с таблицы</h3>
+<p>DELETE FROM test;</p>
+<h3>удалить все данные с таблицы(очистка данных из таблицы)</h3>
+<p>TRUNCATE test;</p>
+
+<hr>
+<h1>выбор данных</h1>
+<hr>
+
+<h3>Выбор всех записей</h3>
+<p>SELECT * FROM `test`</p>
+<br>
+
+<h2>вывод определенного поля</h2>
+<h3>Выбор всех записей, но лишь некоторые поля</h3>
+<p>SELECT id, title FROM test;</p>
+<br>
+
+<h2>диапозоны с помощью больше или меньше (><)</h2>
+<h3>Выбор лишь некоторых записей</h3>
+<p>SELECT * FROM test WHERE id > 6 AND id < 8;</p>
+<br>
+
+<h2>выбрать по параметру</h2>
+<h3>вывод с name Alex
+ 
+с id 5</h3>
+<p>SELECT * FROM test WHERE name = 'Alex' AND id = 5;</p>
+<br>
+
+<h2>работа с NULL и NOT NULL</h2>
+<h3>выбери в таблице peaple где id не равен 5 и name Иван и bio будет NULL</h3>
+<p>SELECT * FROM `people` WHERE id <> 5 AND name = 'Иван' AND bio IS NULL</p>
+<br>
+
+<h2>без повторения</h2>
+<h3>вывод всех не повторяющехся елементов name из таблицы people </h3>
+<p>SELECT DISTINCT name FROM people</p>
+<br>
+
+<h2>лимитирование</h2>
+<h3>первые 2 записи</h3>
+<p>SELECT * FROM `people` LIMIT 2</p>
+<h3>первые 2 пропустить вывести следущиее 3 записи</h3>
+<p>SELECT * FROM `people` LIMIT 2,3</p>
+<br>
+
+<h2>сартирока данных</h2>
+<h3>выдаст сортировки по id по убываению пропуская певые 2 строки и работая с последуйщими 3 строками тоесть (строки с id {4,3,2} )</h3>
+<p>SELECT * FROM `people` ORDER BY id DESC LIMIT 2,3;</p>
+<br>
+
+<h2>диапозоны</h2>
+<h3>диопозон от 2 до 6</h3>
+<p>SELECT * FROM `people` WHERE id BETWEEN 2 AND 6;</p>
+<br>
+
+<h2>работа с выборочным елементом </h2>
+<h3>выбери все из таблици peaple где id с номерами 4,5,2,1 отсартируй по убыванию по позиции id и таботой только с первыми 10 елементами</h3>
+<p>SELECT * FROM `people` WHERE id IN(4,5,2,1) ORDER BY id DESC LIMIT 10</p>
+<br>
+
+<h2>поиск по совпадениям</h2>
+<h3>выбери все из таблицы peaple где name будет чтото с начинаниями Ива и следуйщие буквы(как регулярное вырожение)</h3>
+<p>SELECT * FROM `people` WHERE name LIKE 'Ива%'</p>
+<h3>выбери все из таблицы peaple где name будет чтото с буквой {а} в середине (как регулярное вырожение)</h3>
+<p>SELECT * FROM `people` WHERE name LIKE '%а%'</p>
+<br>
+
+<h2>индексирование</h2>
+<h3>индексирование по name (ускаряет поиск по полю name)</h3>
+<p>CREATE INDEX Nidex ON people(name)</p>
+<h3>удалиние индекса </h3>
+<p>DROP INDEX Ninex ON people;</p>
+
+<h2>ссылки с одной таблицы в другую</h2>
+<h3>в данном примере мы сделали ссылку в таблице orders на id других такблиц(FOREIGN KEY(shopID) REFERENCES shop(id) ,FOREIGN KEY(peopleID) REFERENCES people(id)) </h3>
+<div>
+<p>
+CREATE TABLE shop(<br>
+id INT NOT NULL AUTO_INCREMENT,<br>
+title VARCHAR(100),<br>
+price INT,<br>
+PRIMARY KEY(id) <br>
+);
+</p>
+</div> <br>
+<div>
+<p>
+CREATE TABLE orders(<br>
+id INT NOT NULL AUTO_INCREMENT,<br>
+orderNumber INT,<br>
+shopID INT,<br>
+peopleID INT,<br>
+date_time DATETIME DEFAULT CURRENT_TIMESTAMP ,<br>
+PRIMARY KEY(id),<br>
+FOREIGN KEY(shopID) REFERENCES shop(id) ,<br>
+FOREIGN KEY(peopleID) REFERENCES people(id) <br>
+);
+</p>
+</div>
+<hr>
+<h1>проработака</h1>
+<hr>
+<div>
+<h3>создаем таблицу с таварами</h3>
+<p>INSERT INTO `shop`(`title`,`price`) <br>
+VALUES <br>
+('iphone',300),<br>
+('TV',320),<br>
+('PS4',30),<br>
+('MAC',15),<br>
+('Fridge',23),<br>
+('iphone 7',10)<br>
+</p>
+</div>
+<img src="shop.png" alt="" srcset="">
+<div>
+<h3>создаем таблицу с заказами где orderNumber это номер заказа, shopID номер продукта, peopleID номер человека</h3>
+<p>INSERT INTO `orders`( `orderNumber`, `shopID`, `peopleID`)<br>
+VALUES<br>
+('0001',2,4),<br>
+('0002',4,1),<br>
+('0003',2,5),<br>
+('0004',3,3),<br>
+('0005',1,2),<br>
+('0006',1,4);</p>
+</div>
+<img src="orders.png" alt="" srcset="">
+<div>
+<h3> выбираю поля shop.title people.name people.email<br>
+из таблицы peaple { FROM people} (для дальнейшего обеденение с табличкой orders) и обьеденяю эти данные с табличкой orders <br>
+и будут выведенны лиш те записи в которых people.id будет равен orders.peopleID (парные) <br>
+и все также {FROM people} обьеденяю эти данные с табличкой shop <br>
+и будут выведенны лиш те записи в которых shop.id будет равен orders.shopID (парные)
+в конце просто сартеруем по убываю по сталбцу orders.orderNumber {но этого не будет видно ))} </h3>
+<p>SELECT shop.title,people.name,people.email <br>
+FROM people <br>
+INNER JOIN orders <br>
+ON people.id = orders.peopleID<br>
+INNER JOIN shop <br>
+ON shop.id = orders.shopID <br>
+ORDER BY orders.orderNumber DESC</p>
+</div>
+<img src="sql_INNER_JOIN.png" alt="" srcset="">
+<div>
+<h3>сравниваине LEFT JOIN мы получим все данные с таблички people но возможно не все данные с
+
+people.id
+people.id
+ 
+таблички orders </h3>
+<p>SELECT people.name, orders.orderNumber <br>
+FROM peopl LEFT JOIN orders <br>
+ON people.id = orders.peopleID <br>
+ORDER BY people.name DESC;</p>
+</div>
+<img src="sql_LEFT_JOIN.png" alt="" srcset="">
+<div>
+<h3>RATH JOIN берет не с таблички orders в с правой таблички people с которй мы сравниваем</h3>
+<p>SELECT orders.date_time, people.name <br>
+FROM orders RIGHT JOIN people <br>
+ON orders.peopleID = people.id <br>
+</p>
+</div>
+<img src="sql_RIGHT_JOIN.png" alt="" srcset="">
+<hr>
+<h1>псевдонимы</h1>
+<hr>
+<h3> для name даю псивданим имя и для berth даю псевдоним День Родления в таблице people (просто вместо name будет писаться имя ) </h3>
+<p>SELECT name AS 'имя', berth AS 'День Родления' FROM people </p>
+
+<h3>CONCAT канкатинирует строки или столбци</h3>
+<p>SELECT CONCAT('Имя: ', name,'. День Рождение', berth )AS 'Информация' FROM people</p>
+<p>без псевдонимав</p>
+<img src="do_psevdonima.png" alt="" srcset="">
+
+<p>c псевдонимом</p>
+<img src="posle_psevdonima.png" alt="" srcset="">
+<br>
+<h3>псевдонимы можно использовать как назначение переменных и в наддом случае просто выведяться все параметры (не являеться обьедением , а выборкой из 2 таблицек )</h3>
+<p>SELECT p.id,p.name ,s.title,s.price FROM people AS p , shop AS s</p>
+
+<hr>
+<h1>дополнительные функции</h1>
+<hr>
+<h3>сколько есть полей id в табличке shop {6} </h3>
+<p>SELECT COUNT(id) FROM shop;</p>
+<br>
+<h3>минимальное значение в сталбце price в табличке shop {10}</h3>
+<p>SELECT MIN(price) FROM shop;</p>
+<br>
+<h3>максивмально значение в сталбце price в табличке shop {320}</h3>
+<p>SELECT MAX(price) FROM shop</p>
+<h3>среднее орефмитичемкое значение в сталбце price в табличке shop {116.3333} (прибовляет все числа и делит на их количество) </h3>
+<p>SELECT AVG(price) FROM shop</p>
+<h3>сумма всех чисел в сталбце price в табличке shop {698} </h3>
+<p>SELECT SUM(price) FROM shop
+</p>
+<h3>все в верхнем регистре</h3>
+<p>SELECT UCASE(title) FROM shop
+</p>
+<h3>все в нижнем регистре</h3>
+<p>SELECT LCASE(title) FROM shop
+</p>
+<h3>грппирует по определенным полям (повторяющихся полей ) </h3>
+<p>SELECT price,COUNT(price) AS 'Каличество' FROM shop GROUP BY price
+</p>
+<img src="GROUP_BY.png" alt="" srcset="">
+<h3>выведиться тот елемент у которого GROUP BY больше чем 1</h3>
+<p>SELECT price AS 'Цена',COUNT(price) AS 'Каличество' FROM shop GROUP BY price HAVING COUNT(price) > 1</p>
+<img src="HAVING.png" alt="" srcset="">
+
+</body>
+
+</html>
